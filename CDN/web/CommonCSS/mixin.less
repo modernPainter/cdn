@@ -1,0 +1,118 @@
+/*this is mixin less*/
+.box-sizing(@size){
+  box-sizing: @size;
+  -moz-sizing: @size;
+  -webkit-sizing: @size;
+}
+
+.border-radius(@radius){
+  border-radius: @radius;
+  -webkit-border-radius:@radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+}
+
+.opacity(@opacity){
+  opacity: @opacity;
+  -webkit-opacity: @opacity;
+  @opacity-ie: @opacity * 100;
+}
+
+.transition(...){
+  -moz-transition: @arguments;
+  -o-transition: @arguments;
+  -webkit-transition: @arguments;
+  transition: @arguments;
+}
+
+.transition-delay(@delay) {
+ -moz-transition-delay:  @delay;
+ -o-transition-delay: @delay;
+ -webkit-transition-delay: @delay;
+ transition-delay:  @delay;
+}
+
+// generic transform
+.transform(@transforms) {
+  -moz-transform: @transforms;
+  -o-transform: @transforms;
+  -ms-transform: @transforms;
+  -webkit-transform: @transforms;
+  transform: @transforms;
+}
+
+// generic transform origin;
+.transform-origin(@origins) {
+  -moz-transform-origin: @origins;
+  -o-transform-origin: @origins;
+  -ms-transform-origin: @origins;
+  -webkit-transform-origin: @origins;
+  transform-origin: @origins;
+}
+
+
+// rotate
+.rotate(@deg){
+  .transform(rotate(@deg));
+}
+
+// scale
+.scale(@scale) {
+  .transform(scale(@scale));
+} 
+
+//translate
+.translate (@x, @y) {
+  .transform(translate(@x, @y));
+}
+
+// translateX
+.translateX (@x) {
+ .transform(translateX(@x));
+}
+
+// translateY
+.translateY(@y){
+  .transform(translateY(@y));
+}
+// translate3d
+.translate3d (@x, @y, @z) {
+ .transform(translate3d(@x, @y, @z));
+}
+
+// skew
+.skew (@x, @y) {
+  .transform(skew(@x, @y));
+}
+
+.absolute(@top:auto, @right:auto, @bottom:auto, @left:auto) {
+  position: absolute;
+  left: @left;
+  top: @top;
+  right: @right;
+  bottom: @bottom;
+}
+
+.relative(@top:auto,@right: auto, @bottom: auto, @left: auto){
+  position: relative;
+  left: @left;
+  top: @top;
+  right: @right;
+  bottom: @bottom;
+}
+
+.fixed(@top:auto,@right: auto, @bottom: auto, @left: auto){
+  position: fixed;
+  left: @left;
+  top: @top;
+  right: @right;
+  bottom: @bottom;
+}
+
+.boxShadow-drop(){
+  -webkit-box-shadow: 2px 2px 5px 2px rgba(0,0,0,.2);
+  box-shadow: 2px 2px 5px 2px rgba(0,0,0,.2);
+}
+
+/*--------------mixin less end ------------*/
+
