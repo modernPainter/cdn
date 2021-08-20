@@ -1,2 +1,0 @@
-# Open
-just for CDN
