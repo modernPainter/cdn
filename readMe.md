@@ -13,3 +13,5 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
 
 <script src="https://cdn.jsdelivr.net/gh/modernPainter/opening/CDN/Live2d/autoload.js"></script>
+
+#在线CDN项目
