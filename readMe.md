@@ -1,3 +1,5 @@
+使用说明
+```
 1、cdn头部链接  ：https://cdn.jsdelivr.net/gh/
 
 2、链接：https://cdn.jsdelivr.net/gh/你的用户名/你的仓库名/文件路径@发布的版本号/文件，加载对应版本资源
@@ -11,3 +13,5 @@
 4、 资源路径：下面地址后面拼接资源相对路径
 
 https://cdn.jsdelivr.net/gh/modernPainter/cdn/
+
+```
