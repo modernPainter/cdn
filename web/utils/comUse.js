@@ -984,9 +984,9 @@ const jsUrlHelper = {
 	},
 	putUrlParam: function (url, ref, value) {
 		// 如果没有参数
-		if (url.indexOf('?') == -1)return url + "?" + ref + "=" + value;
+		if (url.indexOf('?') == -1) return url + "?" + ref + "=" + value;
 		// 如果不包括此参数
-		if (url.indexOf(ref) == -1)return url + "&" + ref + "=" + value;
+		if (url.indexOf(ref) == -1) return url + "&" + ref + "=" + value;
 		var arr_url = url.split('?');
 		var base = arr_url[0];
 		var arr_param = arr_url[1].split('&');
@@ -1284,9 +1284,8 @@ const TheURL = {
 		return window.location.protocol + '//' + window.location.host + '/' + uri;
 	}
 }
-
 //数组去嵌套，拍平处理
-function ArrayDenest(arr) { 
+function ArrayDenest(arr) {
 	return arr.reduce(function (prev, cur) {
 		return prev.concat(Array.isArray(cur) ? fn(cur) : cur);
 	}, []);
@@ -1475,8 +1474,44 @@ function CheckImgExists(imgurl) {
 	}
 }
 /*页面图片添加缓存，类似预加载*/
-
-
+async function addImgCache(data, perfectMatch) {
+	/*addImgCache('图片路径1')  或者 addImgCache(['图片路径1','图片路径2','图片路径3']) */
+	function loadImg(imgSrc) {
+		return new Promise((resolve, reject) => {
+			let img = new Image()
+			img.src = imgSrc
+			img.onload = (e) => {
+				resolve("image loading success!")
+			}
+			if (perfectMatch === true) {
+				img.onerror = (e) => {
+					reject("image loading failed!")
+				}
+			}
+		});
+	}
+	if (typeof data === "string") {
+		await loadImg(data).then(value => {
+			console.log(value, "图片加载成功");
+		}).catch(err => {
+			if (perfectMatch === true) {
+				console.log(err, "图片加载失败");
+			}
+		})
+	} else if (data instanceof Array) {
+		const promiseArr = []
+		data.forEach(item => {
+			promiseArr.push(loadImg(item))
+		})
+		await Promise.all(promiseArr).then(value => {
+			console.log(value, "所有图片加载成功");
+		}).catch(err => {
+			if (perfectMatch === true) {
+				console.log(err, "存在图片加载失败");
+			}
+		})
+	}
+}
 /*比较版本号的大小*/
 function CompareVersion(NewestVersion, OldVersion) {
 	function addcompute(ArryUnit1, ArryUnit2) {
