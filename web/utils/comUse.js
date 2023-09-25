@@ -1284,11 +1284,26 @@ const TheURL = {
 		return window.location.protocol + '//' + window.location.host + '/' + uri;
 	}
 }
+/*字符串里提取数字*/
+function stringExtractNum(value, alltrim) {
+	let str = value
+	if (str) {
+		if (alltrim) {//删除字符串里所有的空格
+			str = str.replace(/\s*/g, "")
+		}
+		return str.match(/\d+(.\d+)?/g).map(e => Number(e))
+	}
+	return []
+}
 //数组去嵌套，拍平处理
 function ArrayDenest(arr) {
 	return arr.reduce(function (prev, cur) {
 		return prev.concat(Array.isArray(cur) ? fn(cur) : cur);
 	}, []);
+}
+/*删除字符串里所有的空格*/
+function alltrim(str) {
+	return str.replace(/\s*/g, "");
 }
 /*删除左右两端的空格*/
 function trim(str) {
