@@ -89,7 +89,6 @@ var Fun = {
 		notify('', data, isLast, indent, false);
 		return draw.join(''); //返回一个字符串
 	},
-
 	ParamsToJSON: function(val, name) { //数据转JSON文件或Array数据的js文件
 		if(val == undefined || val == '' || val == null) {
 			console.warn("传入的JSON内容为空！");

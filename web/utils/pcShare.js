@@ -77,6 +77,7 @@ function shareToSina(articleTitle, articleURL, articlePic) {
 	c = url + "?url=" + encodeURIComponent(_url) + "&appkey=" + _appkey + "&title=" + _title + "&pic=" + pic + "&ralateUid=" + _ralateUid + "&language=";
 	window.open(c, "shareQQ", "height=480,width=608,top=" + (h - 480) / 2 + ",left=" + (w - 608) / 2 + ",toolbar=no,menubar=no,resizable=yes,location=yes,status=no");
 }
+
 //分享到开心
 function shareToKaixin(articleTitle, articleURL) {
 	var url = "http://www.kaixin001.com/rest/records.php",
@@ -89,6 +90,7 @@ function shareToKaixin(articleTitle, articleURL) {
 	c = url + "?content=" + encodeURIComponent(_title) + "&url=" + _url + "&&starid=&aid=&style=11&t=10";
 	var win = window.open(c, "shareQQ", "height=480,width=608,top=" + (h - 480) / 2 + ",left=" + (w - 608) / 2 + ",toolbar=no,menubar=no,resizable=yes,location=yes,status=no");
 }
+
 //分享到人人
 function shareToRenren(articleTitle, articleURL) {
 	var url = "http://widget.renren.com/dialog/share",

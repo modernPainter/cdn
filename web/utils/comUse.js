@@ -1823,8 +1823,6 @@ function loadExternalResource(url, type) {
 		}
 	});
 }
-
-
 /*
 //1、vue-resource的请求打断写法
 this.$http.get('/someUrl', {	// use before callback

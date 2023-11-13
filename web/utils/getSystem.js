@@ -1,4 +1,3 @@
-
 var	broswer = {
 	//检测浏览器版本
 	getVersion: function() {
